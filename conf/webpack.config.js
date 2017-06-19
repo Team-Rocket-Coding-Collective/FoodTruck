@@ -12,25 +12,31 @@ module.exports = {
     entry: [
         "webpack-dev-server/client?http://localhost:3000",
         "webpack/hot/only-dev-server",
-        sourceFolder
+        sourceFolder,
     ],
     output: {
         path: outputFolder,
         filename: "bundle.js",
-        publicPath: "http://localhost:3000/"
+        publicPath: "http://localhost:3000/",
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             inject : true,
-            template : templateIndex
+            template : templateIndex,
         })
     ],
     module: [
         {
             test: /\.js$/,
             exclude: /node_modules/,
-            loaders: ["babel"]
+            loaders: ["babel"],
+        },
+        {
+            test: /\.jsx$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
         }
+
     ]
 };
