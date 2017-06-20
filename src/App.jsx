@@ -4,8 +4,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const App = () => (
   <MuiThemeProvider>
-    <h1>
-    Hi
-    </h1>
+    <h1>hi</h1>
   </MuiThemeProvider>
+);
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
 );

@@ -26,17 +26,19 @@ module.exports = {
             template : templateIndex,
         })
     ],
-    module: [
-        {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loaders: ["babel"],
-        },
-        {
-            test: /\.jsx$/,
-            loader: 'babel-loader',
-            exclude: /node_modules/,
-        }
+    module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loaders: ["babel"],
+            },
+            {
+                test: /\.jsx$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+            }
 
-    ]
+        ]
+    }
 };
